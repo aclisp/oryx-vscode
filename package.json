@@ -1,0 +1,82 @@
+{
+	"name": "youxin-cloud-vscode",
+	"displayName": "有信云开发者VSCODE插件",
+	"description": "有信云开发者VSCODE插件",
+	"version": "1.0.1",
+	"publisher": "youxin-cloud",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aclisp/oryx-vscode.git"
+	},
+	"engines": {
+		"vscode": "^1.100.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./out/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "object-explorer",
+					"title": "Object Explorer",
+					"icon": "media/obj.svg"
+				}
+			]
+		},
+		"views": {
+			"object-explorer": [
+				{
+					"id": "objectExplorer",
+					"name": "Object Explorer",
+					"icon": "media/obj.svg",
+					"contextualTitle": "Object Explorer"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "objectExplorer.refreshEntry",
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "exap.extension.downloadFiles",
+				"title": "EXAP: 下载代码"
+			},
+			{
+				"command": "exap.extension.login",
+				"title": "EXAP: 有信云开发者登录"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "objectExplorer.refreshEntry",
+					"when": "view == objectExplorer",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.13.0",
+		"@stylistic/eslint-plugin": "^2.9.0",
+		"@types/node": "^22",
+		"@types/vscode": "^1.100.0",
+		"eslint": "^9.13.0",
+		"typescript": "^5.8.2",
+		"typescript-eslint": "^8.26.0"
+	}
+}
