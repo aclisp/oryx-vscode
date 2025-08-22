@@ -2,11 +2,11 @@
 	"name": "youxin-cloud-vscode",
 	"displayName": "有信云开发者VSCODE插件",
 	"description": "有信云开发者VSCODE插件",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"publisher": "youxin-cloud",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/aclisp/oryx-vscode.git"
+		"url": "https://gitee.com/aclisp/oryx-vscode-release.git"
 	},
 	"engines": {
 		"vscode": "^1.100.0"
@@ -22,7 +22,7 @@
 				{
 					"id": "object-explorer",
 					"title": "Object Explorer",
-					"icon": "media/obj.svg"
+					"icon": "resources/obj.svg"
 				}
 			]
 		},
@@ -31,7 +31,7 @@
 				{
 					"id": "objectExplorer",
 					"name": "Object Explorer",
-					"icon": "media/obj.svg",
+					"icon": "resources/obj.svg",
 					"contextualTitle": "Object Explorer"
 				}
 			]
@@ -44,6 +44,26 @@
 					"light": "resources/light/refresh.svg",
 					"dark": "resources/dark/refresh.svg"
 				}
+			},
+			{
+				"command": "objectExplorer.copyID",
+				"title": "Copy ID"
+			},
+			{
+				"command": "objectExplorer.copyFields",
+				"title": "Copy All Fields"
+			},
+			{
+				"command": "objectExplorer.copyQueryOne",
+				"title": "Copy 查询单条记录"
+			},
+			{
+				"command": "objectExplorer.copyQuery",
+				"title": "Copy 查询多条记录"
+			},
+			{
+				"command": "objectExplorer.copyQueryForEachPage",
+				"title": "Copy 查询所有记录分页"
 			},
 			{
 				"command": "exap.extension.downloadFiles",
@@ -60,6 +80,30 @@
 					"command": "objectExplorer.refreshEntry",
 					"when": "view == objectExplorer",
 					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "objectExplorer.copyID",
+					"when": "view == objectExplorer",
+					"group": "inline"
+				},
+				{
+					"command": "objectExplorer.copyFields",
+					"when": "view == objectExplorer && (viewItem == object || viewItem == refObject)",
+					"group": "inline"
+				},
+				{
+					"command": "objectExplorer.copyQueryOne",
+					"when": "view == objectExplorer && viewItem == object"
+				},
+				{
+					"command": "objectExplorer.copyQuery",
+					"when": "view == objectExplorer && viewItem == object"
+				},
+				{
+					"command": "objectExplorer.copyQueryForEachPage",
+					"when": "view == objectExplorer && viewItem == object"
 				}
 			]
 		}

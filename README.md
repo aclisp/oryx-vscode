@@ -19,3 +19,11 @@
 ## 5. 悬停展示字段详情
 
 ![字段选项](media/field-options.png)
+
+## 6. Copy 对象/字段 ID 到剪贴板
+
+![Copy All Fields](media/copy-all-fields.png)
+
+## 7. 生成查询代码到剪贴板
+
+![生成代码](media/copy-query.png)
